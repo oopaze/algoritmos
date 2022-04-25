@@ -9,6 +9,7 @@ Só uns algoritmos marotos que faço pra estudar e para exercitar programação.
 - [Pesquisa em largura](https://github.com/oopaze/algoritmos/tree/main/pesquisa-em-largura)
 - [Ordenação por seleção](https://github.com/oopaze/algoritmos/tree/main/ordenacao-por-selecao)
 - [Benchmark entre pesquisa simples e pesquisa binaria](https://github.com/oopaze/algoritmos/tree/main/pesquisa-binaria-analise)
+- [Djikstra](https://github.com/oopaze/algoritmos/tree/main/algoritmo-djikstra)
 
 ### Java
 
