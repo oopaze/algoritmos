@@ -6,7 +6,7 @@ public class List {
   
   Integer length = 0;
   
-  public void addItem(Integer value) {
+  public void append(Integer value) {
     Item newItem = new Item(value); 
 
     if(firstItem == null) {
@@ -17,7 +17,7 @@ public class List {
       this.lastItem = newItem;
     }
 
-    length += 1;
+    this.length += 1;
   }
 
   public Item get(Integer index) {
@@ -29,8 +29,22 @@ public class List {
     item.set(value);
   }
 
-  public void show() {
-    System.out.println(this);
+  public Item remove(Integer index) {
+    if (index >= this.length || index < 0) {
+      String errorMessage = String.format("Could not find index %d of length %d", index, this.length - 1);
+      throw new IndexOutOfBoundsException(errorMessage);
+    }
+    
+    Item removedItem = this.firstItem.get(index);
+
+    if (index == 0) {
+      this.firstItem = removedItem.nextItem;
+    } else {
+      Item lastItem = this.firstItem.get(index - 1);
+      lastItem.nextItem = removedItem.nextItem;
+    }
+    this.length -= 1;
+    return removedItem;
   }
 
   private String recursiveShow(Item item) {
