@@ -20,21 +20,36 @@ public class List {
     length += 1;
   }
 
-  private void recursiveShow(Item item) {
-    if (item.nextItem != null) {
-      System.out.print(item + ", ");
-      this.recursiveShow(item.nextItem);
-    } else {
-      System.out.print(item);
-    }
+  public Item get(Integer index) {
+    return this.firstItem.get(index, 0);
+  }
+
+  public void set(Integer index, Integer value) {
+    Item item = this.firstItem.get(index, 0);
+    item.set(value);
   }
 
   public void show() {
-    Item item = this.firstItem;
-    System.out.print('[');
-    
-    this.recursiveShow(item);
+    System.out.println(this);
+  }
 
-    System.out.println(']');
+  private String recursiveShow(Item item) {
+    if (item.nextItem != null) {
+      return item.toString() + ", " + this.recursiveShow(item.nextItem);
+    } else {
+      return item.toString();
+    }
+  }
+
+  @Override
+  public String toString() {
+    Item item = this.firstItem;
+    String listAsString = "[";
+    
+    listAsString += this.recursiveShow(item);
+
+    listAsString += "]";
+
+    return listAsString;
   }
 }

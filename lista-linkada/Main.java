@@ -8,6 +8,11 @@ public class Main {
     numbers_list.addItem(3);
     numbers_list.addItem(4);
 
-    numbers_list.show();
+    System.out.println(numbers_list);
+    System.out.println(numbers_list.get(1));
+
+    numbers_list.set(2, 10);
+
+    System.err.println(numbers_list);
   }
 }
