@@ -21,11 +21,11 @@ public class List {
   }
 
   public Item get(Integer index) {
-    return this.firstItem.get(index, 0);
+    return this.firstItem.get(index);
   }
 
   public void set(Integer index, Integer value) {
-    Item item = this.firstItem.get(index, 0);
+    Item item = this.firstItem.get(index);
     item.set(value);
   }
 

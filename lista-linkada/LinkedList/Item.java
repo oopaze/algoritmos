@@ -8,7 +8,7 @@ public class Item {
     this.value = value;
   }
 
-  public Item get(Integer index, Integer initialIndex) {
+  private Item get(Integer index, Integer initialIndex) {
     if (index == initialIndex) {
       return this;
     } else if(nextItem == null) {
@@ -17,6 +17,10 @@ public class Item {
     } else {
       return nextItem.get(index, initialIndex + 1);
     }
+  }
+
+  public Item get(Integer index) {
+    return this.get(index, 0);
   }
 
   public void set(Integer value) {
