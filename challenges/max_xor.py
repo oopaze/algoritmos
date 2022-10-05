@@ -31,8 +31,8 @@ def transform_combinations_into_string(combinations):
 
 def get_max_xor(numero_de_items, items):
     combinations = generate_combinations(1, numero_de_items, items)
-    eval_equations = transform_combinations_into_string(combinations)
-    return max(map(lambda equation: eval(equation), eval_equations))
+    equations = transform_combinations_into_string(combinations)
+    return max(map(lambda equation: eval(equation), equations))
 
 
 if __name__ == "__main__":
